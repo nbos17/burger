@@ -1,4 +1,47 @@
-<h1>Burgers</h1>
-
-<h2>Eat the Burger!!</h2>
-
+<div class ="container">  
+  <div class="row col-md-12">
+  </div>
+  <div class ="row">
+    <div class="col-md-4">
+      <h3>Burgers Ready to Eat</h3>
+      <ul>
+        {{#each burger}}
+        {{#unless devoured}}
+          <li class="mb-3">
+          {{burger_name}}
+            <button type="button" id="change-eaten" class="btn btn-success btn-sm float-right" data-id="{{id}}" data-neweaten="{{devoured}}" data-target="#nomnom">Eat Now</button>
+          </li>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class ="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <h3>Burgers Consumed</h3>
+      <ul>
+        {{#each burger}}
+        {{#if devoured}}
+          <li>
+          {{burger_name}}
+          </li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class ="col-md-4">
+    </div>
+    <div class ="col-md-4 text-center">
+      <h2>Add a Burger</h2>
+      <form class="create-form">
+       <div class="form-group">
+        <input type="text" id="bu" name="name" class="form-control">
+       </div>
+      <button type="submit" class="btn btn-secondary px-5 btn-lg">&nbsp&nbspAdd Burger&nbsp&nbsp</button>
+      </form>
+    </div>
+  </div>
+</div>
